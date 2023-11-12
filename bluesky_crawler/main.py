@@ -1,5 +1,5 @@
 import asyncio
-from datetime import date, datetime, timedelta
+from datetime import date, datetime
 
 from atproto.firehose import AsyncFirehoseSubscribeReposClient, parse_subscribe_repos_message
 from loguru import logger
@@ -7,7 +7,7 @@ from settings import settings
 from utils.bluesky import get_commit_as_dict, get_date_by_commit
 from utils.file_manager import JsonLinesFile
 
-today = datetime.now() + timedelta(hours=9)
+today = datetime.now()
 logger.add(today.strftime("logs/%Y-%m-%d.log"), rotation=settings.logger_rotation)
 
 
