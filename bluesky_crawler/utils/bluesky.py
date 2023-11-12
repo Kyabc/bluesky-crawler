@@ -5,7 +5,7 @@ from atproto.xrpc_client import models
 from loguru import logger
 
 
-def get_date_by_commit(commit: models.ComAtprotoSyncSubscribeRepos.Commit) -> date:
+def get_date_from_commit(commit: models.ComAtprotoSyncSubscribeRepos.Commit) -> date:
     created_at = datetime.strptime(commit.time, "%Y-%m-%dT%H:%M:%S.%fZ")
     return created_at.date()
 

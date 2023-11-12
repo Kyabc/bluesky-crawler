@@ -4,7 +4,7 @@ from datetime import date, datetime
 from atproto.firehose import AsyncFirehoseSubscribeReposClient, parse_subscribe_repos_message
 from loguru import logger
 from settings import settings
-from utils.bluesky import get_commit_as_dict, get_date_by_commit
+from utils.bluesky import get_commit_as_dict, get_date_from_commit
 from utils.file_manager import JsonLinesFile
 
 today = datetime.now()
@@ -23,7 +23,7 @@ async def main():
         try:
             commit = parse_subscribe_repos_message(message)
             commit_dict = get_commit_as_dict(commit)
-            created_at = get_date_by_commit(commit)
+            created_at = get_date_from_commit(commit)
             file_path = data_file_path(created_at)
             if file.file_path != file_path:
                 file.reopen(file_path)
