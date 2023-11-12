@@ -1,5 +1,6 @@
 # Bluesky crawler
-[bluesky]() 
+Python implementation of using [bluesky](https://bsky.app/)'s firehose API to retrieve streaming data.
+
 ## Usage:
 ```
 poetry install
