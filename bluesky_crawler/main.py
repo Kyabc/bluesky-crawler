@@ -27,7 +27,8 @@ async def main():
             file_path = data_file_path(created_at)
             if file.file_path != file_path:
                 file.reopen(file_path)
-            file.add_json(commit_dict)
+            if commit_dict["operations"]:
+                file.add_json(commit_dict)
         except Exception as e:
             logger.error(f"Exception raised ({e})")
 
