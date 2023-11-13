@@ -2,7 +2,7 @@
 name = "bluesky-crawler"
 version = "0.1.0"
 description = "the crawler for bluesky"
-authors = ["Keiya Sato (sato-keiya@ed.tmu.ac.jp)"]
+authors = ["Keiya Sato <sato-keiya@ed.tmu.ac.jp>"]
 readme = "README.md"
 packages = [{include = "bluesky_crawler"}]
 
