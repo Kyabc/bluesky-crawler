@@ -23,7 +23,7 @@ def get_commit_as_dict(commit: models.ComAtprotoSyncSubscribeRepos.Commit) -> di
 
     for op in commit.ops:
         if op.action == 'update':
-            logger.warning(f"Update action is not supported. ({op})")
+            # logger.warning(f"Update action is not supported. ({op})")
             continue
 
         uri = AtUri.from_str(f'at://{commit.repo}/{op.path}')
