@@ -8,7 +8,8 @@ from utils.bluesky import get_commit_as_dict, get_date_from_commit
 from utils.file_manager import JsonLinesFile
 
 today = datetime.now()
-logger.add(today.strftime("logs/%Y-%m-%d.log"), rotation=settings.logger_rotation)
+logger.remove()
+logger.add(today.strftime("logs/crawler.log"), rotation=settings.logger_rotation)
 
 
 def data_file_path(date: date) -> str:
